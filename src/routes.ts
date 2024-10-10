@@ -5,6 +5,7 @@ import { isAuthenticated } from "./middleweres/isAuthenticated";
 import { DetailUserController } from "./controllers/user/DetailUserController";
 import { RemoveUserController } from "./controllers/user/RemoveUserController";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
+import { EditeCategoryController } from "./controllers/category/EditeCategoryController";
 
 const router = Router();
 router.get("/test", (request: Request, response: Response) => {
@@ -19,7 +20,8 @@ router.delete('/user/remove', new RemoveUserController().handle);
 
 //category Routes 
 
-router.post("/category", isAuthenticated, new CreateCategoryController().handle)
+router.post("/category", isAuthenticated, new CreateCategoryController().handle);
+router.put("/category/edit", isAuthenticated, new EditeCategoryController().handle);
 
 
 
