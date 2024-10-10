@@ -21,6 +21,7 @@ model User{
 
   created_at DateTime? @default(now())
   updated_at DateTime? @default(now())
+  delete_at DateTime? @default(now())
 
   @@map("users")
 }
