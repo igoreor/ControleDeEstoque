@@ -1,16 +1,16 @@
-import { Request, Response} from "express";
+import { Request, Response } from "express";
 import { RemoveUserService } from "../../services/user/RemoveUserService";
 
-class RemoveUserController{
+class RemoveUserController {
     
-    async handle(request: Request, response: Response){
+    async handle(request: Request, response: Response) {
         const user_id = request?.query.user_id as string;
-        const removerUserService = new RemoveUserService();
-        const removerUser = RemoveUserService.execute({ user_id });
-        return response.json(removerUser);
+        const removeUserService = new RemoveUserService();
+        const removeUser = await removeUserService.execute({ user_id });
+        return response.json(removeUser);
+       
     }
 
 }
 
-
-export {RemoveUserController}
+export { RemoveUserController };

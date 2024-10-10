@@ -1,3 +1,3 @@
-export interface RemoveUserInterface {
+export interface RemoveUserRequest {
     user_id: string;
 }
